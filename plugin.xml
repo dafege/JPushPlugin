@@ -133,7 +133,7 @@
 	<platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="JPushClient">
-                <param name="ios-package" value="CDVJPush/>
+                <param name="ios-package" value="CDVJPush"/>
             </feature>
         </config-file>
 
