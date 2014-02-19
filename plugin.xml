@@ -97,26 +97,6 @@
 
                 </intent-filter>
             </service>
-            <!-- Required SDK核心功能-->
-            <receiver
-                    android:name="cn.jpush.android.service.PushReceiver"
-                    android:enabled="true">
-                <intent-filter android:priority="1000">
-                    <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
-                    <!--Required  显示通知栏 -->
-                    <category android:name="$PACKAGE_NAME"/>
-                </intent-filter>
-                <intent-filter>
-                    <action android:name="android.intent.action.USER_PRESENT"/>
-                    <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
-                </intent-filter>
-                <!-- Optional -->
-                <intent-filter>
-                    <action android:name="android.intent.action.PACKAGE_ADDED"/>
-                    <action android:name="android.intent.action.PACKAGE_REMOVED"/>
-                    <data android:scheme="package"/>
-                </intent-filter>
-            </receiver>
 			<!-- User defined.  For test only  用户自定义的广播接收器 -->
 			<receiver
 					android:name="com.orange.plugin.PushReceiverClient"
