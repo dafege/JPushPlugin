@@ -23,6 +23,10 @@ public class JpushClient extends CordovaPlugin {
 			register(data, callbackContext);
 		} else if (action.equals("stop")) {
 			stopReceive();
+		} else if (action.equals("closeGroupSound")) {
+			closeGroupSound();
+		} else if (action.equals("openGroupSound")) {
+			openGroupSound();
 		}
 		return true;
 	}
@@ -52,5 +56,13 @@ public class JpushClient extends CordovaPlugin {
 	{
 		Context context = cordova.getActivity().getApplicationContext();
 		JPushInterface.stopPush(context);
+	}
+	
+	public void openGroupSound() {
+		PushReceiverClient.isGroupSilent = false;
+	}
+	
+	public void closeGroupSound() {
+		PushReceiverClient.isGroupSilent = true;
 	}
 }
